@@ -1,0 +1,44 @@
+
+.SearchArea {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+}
+
+input {
+    width: 350px;
+    border: 0.5px lightgrey solid;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+input:focus {
+    outline: none !important;
+    border: 0.5px rgb(123, 162, 238) solid;
+}
+
+input:focus + .imageDeparture {
+    display: block;
+}
+
+.SelectArea {
+    border: 1px lightgrey solid;
+    border-radius: 5px;
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+}
+
+.city {
+    color: grey;
+    border: 1px lightgrey solid;
+    padding: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.city:hover {
+    color: black;
+}
