@@ -1,4 +1,4 @@
-
+/* 
 .SearchArea {
     position: absolute;
     top: 40%;
@@ -14,7 +14,7 @@ input {
 
 input:focus {
     outline: none !important;
-    border: 0.5px rgb(123, 162, 238) solid;
+    border: 0.5px #01C3A7 solid;
 }
 
 input:focus + .imageDeparture {
@@ -37,6 +37,104 @@ input:focus + .imageDeparture {
     padding: 7px;
     cursor: pointer;
     transition: 0.3s;
+}
+
+.city:hover {
+    color: black;
+} */
+
+
+.global {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    font-size: 15px;
+}
+
+/*SEARCH AREA****************************/
+.SearchArea {
+    margin-top: 30%;
+    margin-left: 5%;
+    background-color: white;
+    height: 550px;
+    width: 500px;
+    border-radius: 5px;
+}
+
+.inputDestination {
+    margin-top: 15%;
+    margin-left: 10%;
+}
+
+.inputDeparture {
+    width: 350px;
+    padding: 11px 0 11px 35px;
+    outline: none !important;
+    border: 1px solid lightgrey;
+    border-radius: 5px 5px 0 0;
+    background-color: rgba(240, 233, 233, 0.384);
+}
+
+.inputArrival {
+    width: 350px;
+    padding: 11px 0 11px 35px;
+    outline: none !important;
+    border: 1px solid lightgrey;
+    border-radius: 0 0 5px 5px;
+    background-color: rgba(240, 233, 233, 0.384);
+}
+
+.inputDeparture:focus {
+    border: 0.5px #01C3A7 solid;
+    background-color: white;
+}
+
+.inputArrival:focus {
+    border: 0.5px #01C3A7 solid;
+    background-color: white;
+}
+
+::placeholder { 
+    color: rgb(95, 91, 91);
+    opacity: 0.5;
+}
+
+input:focus ::placeholder {
+    opacity: 1;
+}
+
+.selectInfo{
+    font-size: 1.5em;
+    margin-top: 5%;
+    margin-left: 5%;
+    opacity: 0.7;
+}
+
+
+/*SELECT AREA****************************/
+.SelectArea {
+    margin-top: 30%;
+    margin-left: 3%;
+    background-color: white;
+    height: 550px;
+    width: 500px;
+    border-radius: 5px;
+}
+
+.listResults {
+    margin: 5% 5% 0 5%;
+    border: 1px lightgrey solid;
+    border-radius: 5px;
+    height: 85%;
+}
+
+.city {
+    color: rgb(136, 129, 129);
+    border: lightgrey solid;
+    border-width: 0 0 1px 0;
+    padding: 11px 0 11px 35px;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 .city:hover {

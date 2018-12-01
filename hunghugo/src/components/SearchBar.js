@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import playButton from '../icons/play-button.svg'
 import "./SearchBar.css";
-
 
 class SearchBar extends Component {
   state = {
     departure: "",
     arrival: "",
+    text: "",
     results: [],
     resultsState: false,
     isArrival: false
@@ -16,9 +17,9 @@ class SearchBar extends Component {
       `https://www-uat.tictactrip.eu/api/cities/autocomplete/?q=${city}`
     );
     const data = await results.json();
-    const departuresName = data.map(element => element.local_name);
+    const destinationsName = data.map(element => element.local_name);
     this.setState({
-      results: departuresName,
+      results: destinationsName,
       resultsState: true
     });
     if (isArrival) this.setState({ isArrival: true });
@@ -51,35 +52,47 @@ class SearchBar extends Component {
     });
   };
 
+  changeText = event => {
+    if (event.target.name === "departure") {
+      this.setState({ text: "Choisissez votre gare de départ" });
+    } else {
+      this.setState({ text: "Choisissez votre gare d'arrivée" });
+    }
+  };
+
   render() {
     return (
       <div className="global">
         <div className="SearchArea">
-          <div>
-            <input
-              className="inputdeparture"
-              type="text"
-              value={this.state.departure}
-              name="departure"
-              placeholder="Saisissez votre gare de départ..."
-              onChange={this.handleChange}
-            />
-          </div>
+          <div className="inputDestination">
+            <div>
+              <input
+                className="inputDeparture"
+                type="text"
+                value={this.state.departure}
+                name="departure"
+                placeholder="Saisissez une gare de départ..."
+                onClick={this.changeText}
+                onChange={this.handleChange}
+              />
+            </div>
 
-          <div>
-            <input
-              className="inputArrival"
-              type="text"
-              value={this.state.arrival}
-              name="arrival"
-              placeholder="Saisissez votre gare d'arrivée..."
-              onChange={this.handleChange}
-            />
+            <div>
+              <input
+                className="inputArrival"
+                type="text"
+                value={this.state.arrival}
+                name="arrival"
+                placeholder="Saisissez une gare d'arrivée..."
+                onClick={this.changeText}
+                onChange={this.handleChange}
+              />
+            </div>
           </div>
         </div>
 
         <div className="SelectArea">
-
+          <p className="selectInfo">{this.state.text}</p>
           <div className="listResults">
             {this.state.resultsState
               ? this.state.results.map((element, index) => {

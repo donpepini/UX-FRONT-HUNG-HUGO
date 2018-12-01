@@ -1,3 +1,5 @@
-.App {
-  text-align: center;
+html {
+  background-image: url("https://assets.trainline.eu/assets/images/open-home/covers/cover-beach-8dc53adfd913bec45958b705ec6369fa.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
